@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Petrifern — Ornamental Plant Tissue Culture</title>
+<meta name="description" content="India's BSL-1 certified ornamental plant tissue culture lab. Disease-free, export-grade plantlets of Anthurium, Dendrobium, Phalaenopsis, Alocasia, Spathiphyllum, Syngonium and Philodendron."/>
+<link rel="preconnect" href="https://fonts.cdnfonts.com"/>
+<link href="https://fonts.cdnfonts.com/css/clear-sans" rel="stylesheet"/>
+<style>
+/* ─── RESET ─── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Clear Sans',-apple-system,BlinkMacSystemFont,sans-serif;color:#323232;background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+section{scroll-margin-top:64px}
+
+/* ─── VARIABLES ─── */
+:root{
+  --teal:#00bbb4;
+  --blue:#5e86d1;
+  --dark:#323232;
+  --forest:#1b3326;
+  --white:#ffffff;
+  --light:#f7f6f2;
+  --mid:#e8e5df;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+
+/* ─── TOPBAR ─── */
+#topbar{
+  background:var(--teal);
+  text-align:center;
+  padding:.6rem 5%;
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--white);
+}
+#topbar span{opacity:.5;padding:0 .7rem}
+
+/* ─── NAV ─── */
+#nav{
+  position:sticky;top:0;z-index:200;
+  background:var(--white);
+  border-bottom:1px solid var(--mid);
+  box-shadow:0 1px 6px rgba(0,0,0,.05);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 5%;height:64px;
+}
+.nav-logo{
+  display:flex;align-items:center;gap:.55rem;
+  font-weight:700;font-size:1.1rem;color:var(--dark);
+}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{
+  font-size:.76rem;font-weight:400;
+  letter-spacing:.07em;text-transform:uppercase;
+  color:rgba(50,50,50,.58);transition:color .2s;
+}
+.nav-links a:hover{color:var(--teal)}
+.nav-cta{
+  background:var(--teal);color:var(--white);
+  padding:.52rem 1.4rem;
+  font-size:.73rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  transition:opacity .2s;
+}
+.nav-cta:hover{opacity:.85}
+
+/* ─── HERO ─── */
+#hero{
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:540px;background:var(--forest);
+  position:relative;overflow:hidden;
+}
+.hero-left{
+  padding:5rem 5% 5rem 8%;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;z-index:1;
+}
+.hero-eyebrow{
+  font-size:.67rem;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:1.2rem;
+}
+.hero-left h1{
+  font-size:clamp(2.4rem,4vw,3.5rem);
+  font-weight:700;line-height:1.06;
+  color:var(--white);margin-bottom:1.1rem;
+  letter-spacing:-.02em;
+}
+.hero-left h1 em{font-style:italic;color:var(--teal)}
+.hero-left p{
+  font-size:.95rem;line-height:1.75;
+  color:rgba(255,255,255,.62);
+  max-width:400px;margin-bottom:2rem;
+}
+.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap}
+.btn-teal{
+  background:var(--teal);color:var(--white);
+  padding:.8rem 1.9rem;font-family:inherit;
+  font-weight:700;font-size:.77rem;
+  letter-spacing:.1em;text-transform:uppercase;
+  border:2px solid var(--teal);
+  display:inline-block;transition:opacity .2s;
+}
+.btn-teal:hover{opacity:.85}
+.btn-ghost{
+  background:transparent;color:var(--white);
+  padding:.8rem 1.9rem;font-family:inherit;
+  font-weight:700;font-size:.77rem;
+  letter-spacing:.1em;text-transform:uppercase;
+  border:2px solid rgba(255,255,255,.38);
+  display:inline-block;transition:border-color .2s;
+}
+.btn-ghost:hover{border-color:rgba(255,255,255,.85)}
+.hero-right{
+  position:relative;overflow:hidden;
+}
+.hero-right img{
+  width:100%;height:100%;object-fit:cover;
+  display:block;
+  transform:scale(1.06);
+  animation:hzoom 14s var(--ease) forwards;
+}
+@keyframes hzoom{to{transform:scale(1)}}
+.hero-right::before{
+  content:'';position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to right,rgba(27,51,38,.55) 0%,transparent 55%);
+}
+.hero-triangle{
+  position:absolute;bottom:-1px;left:0;right:0;
+  height:70px;z-index:2;
+}
+
+/* ─── SPECIES BAR ─── */
+#species{
+  background:var(--white);
+  padding:3rem 5% 2.8rem;
+  border-bottom:2px solid var(--mid);
+}
+.species-title{
+  text-align:center;
+  font-size:.68rem;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:2.2rem;
+}
+.species-row{
+  display:flex;justify-content:center;
+  gap:1.8rem;flex-wrap:wrap;
+}
+.species-item{
+  display:flex;flex-direction:column;
+  align-items:center;gap:.65rem;
+  text-decoration:none;cursor:pointer;
+}
+.species-circle{
+  width:108px;height:108px;
+  border-radius:50%;overflow:hidden;
+  border:3px solid transparent;
+  background:var(--mid);
+  transition:border-color .25s,transform .25s;
+  flex-shrink:0;
+}
+.species-circle img{
+  width:100%;height:100%;
+  object-fit:cover;display:block;
+}
+.species-item:hover .species-circle{
+  border-color:var(--teal);
+  transform:translateY(-4px);
+}
+.species-name{
+  font-size:.8rem;font-weight:700;
+  color:var(--dark);text-align:center;
+}
+.species-sci{
+  font-size:.67rem;font-style:italic;
+  color:rgba(50,50,50,.4);text-align:center;
+  margin-top:-.4rem;
+}
+
+/* ─── ABOUT ─── */
+#about{
+  background:var(--light);
+  padding:5rem 5%;
+  display:grid;grid-template-columns:1.35fr 1fr;
+  gap:5rem;align-items:center;
+  position:relative;overflow:hidden;
+}
+.about-bg-tri{
+  position:absolute;top:0;right:0;
+  width:26%;height:100%;
+  background:var(--teal);
+  clip-path:polygon(100% 0%,100% 100%,0% 0%);
+  opacity:.06;pointer-events:none;
+}
+.about-label{
+  font-size:.68rem;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:.9rem;
+}
+.about-left h2{
+  font-size:clamp(1.7rem,3vw,2.4rem);
+  font-weight:700;line-height:1.1;margin-bottom:1.2rem;
+}
+.about-left p{
+  font-size:.92rem;line-height:1.8;
+  color:rgba(50,50,50,.62);margin-bottom:.9rem;
+}
+.about-badges{
+  display:flex;gap:.55rem;flex-wrap:wrap;
+  margin-top:1.5rem;
+}
+.badge{
+  background:var(--dark);color:var(--white);
+  padding:.32rem .85rem;
+  font-size:.6rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+}
+.badge.t{background:var(--teal)}
+.about-stats{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:1.5px;background:var(--mid);
+  position:relative;z-index:1;
+}
+.astat{
+  background:var(--white);
+  padding:2rem 1.8rem;
+}
+.astat-num{
+  font-size:2.2rem;font-weight:700;
+  color:var(--teal);line-height:1;margin-bottom:.4rem;
+}
+.astat-label{
+  font-size:.7rem;letter-spacing:.1em;
+  text-transform:uppercase;
+  color:rgba(50,50,50,.42);line-height:1.5;
+}
+
+/* ─── CATALOG ─── */
+#catalog{
+  background:var(--white);
+  padding:5rem 5%;
+}
+.section-label{
+  font-size:.68rem;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:.8rem;
+}
+#catalog h2{
+  font-size:clamp(1.7rem,3vw,2.4rem);
+  font-weight:700;margin-bottom:.7rem;
+}
+#catalog .intro-p{
+  font-size:.9rem;line-height:1.75;
+  color:rgba(50,50,50,.55);
+  max-width:560px;margin-bottom:3rem;
+}
+.cat-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:2px;background:var(--mid);
+}
+.cat-card{
+  background:var(--white);
+  display:flex;flex-direction:column;
+  overflow:hidden;
+  border-left:4px solid transparent;
+  transition:border-color .3s;
+}
+.cat-card:hover{border-color:var(--teal)}
+.cat-img{
+  height:250px;overflow:hidden;
+  background:var(--mid);position:relative;
+}
+.cat-img img{
+  width:100%;height:100%;
+  object-fit:cover;display:block;
+  transition:transform .7s var(--ease);
+}
+.cat-card:hover .cat-img img{transform:scale(1.05)}
+.cat-body{
+  padding:1.5rem 1.8rem 2rem;flex:1;
+}
+.cat-type{
+  font-size:.62rem;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:.45rem;
+}
+.cat-name{
+  font-size:1.4rem;font-weight:700;
+  color:var(--dark);line-height:1.1;margin-bottom:.25rem;
+}
+.cat-sci{
+  font-size:.74rem;font-style:italic;
+  color:rgba(50,50,50,.38);margin-bottom:.85rem;
+}
+.cat-desc{
+  font-size:.83rem;line-height:1.72;
+  color:rgba(50,50,50,.6);
+}
+/* Philodendron wide card */
+.cat-card-wide{grid-column:span 2}
+.cat-card-wide .cat-img{height:300px}
+
+/* ─── PROCESS ─── */
+#process{
+  background:var(--dark);
+  display:grid;grid-template-columns:1fr 1fr;
+}
+.proc-photo{
+  position:relative;overflow:hidden;
+  min-height:560px;
+}
+.proc-photo img{
+  width:100%;height:100%;
+  object-fit:cover;display:block;
+}
+.proc-photo::after{
+  content:'';position:absolute;inset:0;
+  background:rgba(0,0,0,.2);
+}
+.proc-photo::before{
+  content:'';position:absolute;
+  bottom:0;right:0;z-index:1;
+  width:50%;height:38%;
+  background:var(--teal);
+  clip-path:polygon(100% 100%,0% 100%,100% 0%);
+  opacity:.88;
+}
+.proc-content{
+  padding:5rem;color:var(--white);
+  display:flex;flex-direction:column;justify-content:center;
+}
+.proc-content .section-label{color:rgba(255,255,255,.35)}
+.proc-content h2{
+  font-size:clamp(1.6rem,2.5vw,2.2rem);
+  font-weight:700;color:var(--white);
+  margin-bottom:2.8rem;line-height:1.1;
+}
+.step{
+  display:flex;gap:1.4rem;
+  padding-bottom:2rem;margin-bottom:2rem;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.step:last-child{
+  border-bottom:none;margin-bottom:0;padding-bottom:0;
+}
+.step-n{
+  font-size:.6rem;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--teal);flex-shrink:0;
+  width:48px;padding-top:.2rem;
+}
+.step-b h4{
+  font-size:.97rem;font-weight:700;
+  color:var(--white);margin-bottom:.4rem;
+}
+.step-b p{
+  font-size:.82rem;line-height:1.65;
+  color:rgba(255,255,255,.45);
+}
+
+/* ─── FACILITY ─── */
+#facility{
+  background:var(--light);
+  padding:5rem 5%;
+  position:relative;overflow:hidden;
+}
+.fac-bg-tri{
+  position:absolute;top:0;left:0;
+  width:26%;height:100%;
+  background:var(--blue);
+  clip-path:polygon(0% 0%,0% 100%,100% 0%);
+  opacity:.05;pointer-events:none;
+}
+.fac-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:center;
+  position:relative;z-index:1;
+}
+.fac-photo{
+  position:relative;overflow:hidden;
+  aspect-ratio:4/3;
+}
+.fac-photo img{
+  width:100%;height:100%;
+  object-fit:cover;display:block;
+}
+.fac-photo::after{
+  content:'';position:absolute;
+  bottom:0;left:0;
+  width:42%;height:34%;
+  background:var(--teal);
+  clip-path:polygon(0% 100%,100% 100%,0% 0%);
+}
+.fac-text h2{
+  font-size:clamp(1.7rem,3vw,2.4rem);
+  font-weight:700;margin-bottom:1.4rem;line-height:1.1;
+}
+.fac-text p{
+  font-size:.9rem;line-height:1.8;
+  color:rgba(50,50,50,.6);margin-bottom:1rem;
+}
+.certs{
+  display:flex;gap:.6rem;flex-wrap:wrap;
+  margin:1.5rem 0;
+}
+.cert{
+  background:var(--dark);color:var(--white);
+  padding:.35rem .9rem;
+  font-size:.62rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+}
+.pills{display:flex;flex-wrap:wrap;gap:.55rem}
+.pill{
+  border:1.5px solid rgba(50,50,50,.15);
+  padding:.4rem .88rem;
+  font-size:.66rem;font-weight:700;
+  letter-spacing:.07em;text-transform:uppercase;
+  transition:border-color .2s,color .2s;cursor:default;
+}
+.pill:hover{border-color:var(--teal);color:var(--teal)}
+
+/* ─── CTA ─── */
+#cta{
+  background:var(--teal);
+  padding:5rem 5%;
+  position:relative;overflow:hidden;
+}
+.cta-tri{
+  position:absolute;top:0;right:0;
+  width:38%;height:100%;
+  background:rgba(255,255,255,.1);
+  clip-path:polygon(100% 0%,100% 100%,0% 100%);
+  pointer-events:none;
+}
+.cta-inner{position:relative;z-index:1;max-width:580px}
+.cta-inner .section-label{color:rgba(255,255,255,.52)}
+.cta-inner h2{
+  font-size:clamp(1.8rem,3.5vw,2.8rem);
+  font-weight:700;color:var(--white);
+  line-height:1.05;margin-bottom:.9rem;
+}
+.cta-inner p{
+  font-size:.97rem;line-height:1.72;
+  color:rgba(255,255,255,.78);margin-bottom:2rem;
+}
+.btn-white{
+  background:var(--white);color:var(--teal);
+  padding:.85rem 2.2rem;font-family:inherit;
+  font-weight:700;font-size:.77rem;
+  letter-spacing:.1em;text-transform:uppercase;
+  border:2px solid var(--white);
+  display:inline-block;transition:opacity .2s;
+}
+.btn-white:hover{opacity:.9}
+
+/* ─── CONTACT ─── */
+#contact{display:grid;grid-template-columns:1fr 1fr}
+.ci{
+  background:var(--dark);
+  padding:5rem 5%;
+  position:relative;overflow:hidden;color:var(--white);
+}
+.ci-tri{
+  position:absolute;bottom:0;right:0;
+  width:58%;height:43%;
+  background:var(--teal);
+  clip-path:polygon(100% 100%,0% 100%,100% 0%);
+  opacity:.17;pointer-events:none;
+}
+.ci-inner{position:relative;z-index:1}
+.ci .section-label{color:rgba(255,255,255,.3)}
+.ci h2{
+  font-size:clamp(1.6rem,3vw,2.3rem);
+  font-weight:700;color:var(--white);
+  margin-bottom:1.3rem;line-height:1.1;
+}
+.ci p{
+  font-size:.87rem;line-height:1.78;
+  color:rgba(255,255,255,.5);margin-bottom:2.5rem;
+}
+.cdet{margin-bottom:1.1rem}
+.cdet-l{
+  font-size:.6rem;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:.2rem;
+}
+.cdet-v{font-size:.87rem;color:rgba(255,255,255,.78)}
+.cfw{padding:5rem 5%;background:var(--white)}
+.cfw .section-label{margin-bottom:.8rem}
+.cfw h2{
+  font-size:clamp(1.6rem,3vw,2.2rem);
+  font-weight:700;margin-bottom:2.2rem;
+}
+.cform{display:flex;flex-direction:column;gap:.95rem}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:.95rem}
+.fg{display:flex;flex-direction:column;gap:.3rem}
+.fg label{
+  font-size:.6rem;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(50,50,50,.38);
+}
+.cform input,
+.cform textarea,
+.cform select{
+  background:#f4f3f0;border:none;
+  border-bottom:2px solid rgba(50,50,50,.1);
+  color:var(--dark);font-family:inherit;
+  font-size:.9rem;padding:.78rem .9rem;
+  outline:none;width:100%;
+  transition:border-color .25s,background .2s;
+  -webkit-appearance:none;appearance:none;
+  border-radius:0;
+}
+.cform input:focus,
+.cform textarea:focus,
+.cform select:focus{
+  border-color:var(--teal);background:#edece9;
+}
+.cform input::placeholder,
+.cform textarea::placeholder{opacity:.28}
+.cform textarea{resize:vertical;min-height:108px}
+.cform .submit{
+  background:var(--teal);color:var(--white);
+  border:none;cursor:pointer;
+  padding:.88rem 2.2rem;align-self:flex-start;
+  font-family:inherit;font-weight:700;
+  font-size:.77rem;letter-spacing:.12em;
+  text-transform:uppercase;
+  transition:opacity .2s;margin-top:.3rem;
+  border-radius:0;
+}
+.cform .submit:hover{opacity:.85}
+#form-ok{
+  display:none;
+  font-size:.8rem;font-weight:700;
+  color:var(--teal);margin-top:.5rem;
+}
+
+/* ─── FOOTER ─── */
+footer{
+  background:var(--dark);
+  border-top:3px solid var(--teal);
+  padding:2rem 5%;
+  display:flex;align-items:center;
+  justify-content:space-between;
+}
+.footer-logo{
+  display:flex;align-items:center;gap:.5rem;
+  font-weight:700;font-size:1rem;color:var(--white);
+}
+.footer-sub{font-size:.6rem;opacity:.2;margin-top:.15rem;color:var(--white)}
+.footer-r{text-align:right}
+.footer-r span{
+  display:block;font-size:.65rem;
+  color:rgba(255,255,255,.25);
+  letter-spacing:.04em;line-height:1.75;
+}
+
+/* ─── SCROLL REVEAL ─── */
+.sr{
+  opacity:0;transform:translateY(22px);
+  transition:opacity .65s var(--ease),transform .65s var(--ease);
+}
+.sr.on{opacity:1;transform:none}
+.d1{transition-delay:.08s}
+.d2{transition-delay:.16s}
+.d3{transition-delay:.24s}
+.d4{transition-delay:.32s}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1050px){
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .cat-card-wide{grid-column:span 2}
+}
+@media(max-width:860px){
+  .nav-links,.nav-cta{display:none}
+  #hero{grid-template-columns:1fr}
+  .hero-right{min-height:280px}
+  .hero-left{padding:4rem 5%}
+  .species-circle{width:82px;height:82px}
+  .species-row{gap:1.2rem}
+  #about{grid-template-columns:1fr;gap:2.5rem}
+  .about-stats{grid-template-columns:1fr 1fr}
+  #process{grid-template-columns:1fr}
+  .proc-photo{min-height:280px}
+  .proc-content{padding:3.5rem 5%}
+  .fac-grid{grid-template-columns:1fr;gap:2.5rem}
+  #contact{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:.8rem;text-align:center}
+  .footer-r{text-align:center}
+}
+@media(max-width:600px){
+  .cat-grid{grid-template-columns:1fr}
+  .cat-card-wide{grid-column:span 1}
+  .row2{grid-template-columns:1fr}
+  .species-circle{width:72px;height:72px}
+  .species-row{gap:1rem}
+  .species-name{font-size:.72rem}
+}
+/* ─── TEAM ─── */
+#team {
+  background: var(--white);
+  padding: 5rem 5%;
+  border-top: 1px solid var(--mid);
+}
+#team .section-label { margin-bottom: .8rem; }
+#team h2 {
+  font-size: clamp(1.7rem,3vw,2.4rem);
+  font-weight: 700; margin-bottom: .7rem;
+}
+.team-intro {
+  font-size: .9rem; line-height: 1.75;
+  color: rgba(50,50,50,.55);
+  max-width: 580px; margin-bottom: 3rem;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px; background: var(--mid);
+}
+.team-card {
+  background: var(--white);
+  padding: 2.8rem 2.5rem;
+  display: flex; gap: 2rem;
+  align-items: flex-start;
+  border-left: 4px solid transparent;
+  transition: border-color .3s;
+}
+.team-card:hover { border-color: var(--teal); }
+.team-avatar-img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 3px solid var(--teal);
+  background: var(--mid);
+}
+.team-avatar-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.team-body { flex: 1; }
+.team-name {
+  font-size: 1.25rem; font-weight: 700;
+  color: var(--dark); margin-bottom: .3rem;
+  line-height: 1.1;
+}
+.team-title {
+  font-size: .75rem; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: .9rem;
+}
+.team-creds {
+  display: flex; flex-wrap: wrap; gap: .45rem;
+  margin-bottom: 1rem;
+}
+.tcred {
+  background: var(--light);
+  border: 1px solid var(--mid);
+  padding: .22rem .72rem;
+  font-size: .62rem; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--dark);
+}
+.team-bio {
+  font-size: .84rem; line-height: 1.75;
+  color: rgba(50,50,50,.58);
+}
+@media(max-width:860px){
+  .team-grid { grid-template-columns: 1fr; }
+  .team-card { flex-direction: column; gap: 1.2rem; }
+}
+@media(max-width:600px){
+  .team-card { padding: 2rem 1.5rem; }
+}
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background: var(--mid);
+}
+.carousel-track {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 0.5s var(--ease);
+}
+.carousel-track img {
+  width: 33.333%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+.car-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.88);
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  font-size: 1.1rem;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  z-index: 10;
+}
+.car-btn:hover { background: rgba(255,255,255,1); }
+.car-prev { left: 12px; }
+.car-next { right: 12px; }
+.car-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;
+  z-index: 10;
+}
+.car-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: background 0.2s;
+  border: none;
+}
+.car-dot.active { background: var(--teal); }
+</style>
+</head>
+<body>
+
+<!-- 01 TOPBAR -->
+<div id="topbar">
+  BSL-1 Certified <span>·</span>
+  ICAR-NRCO Licensed <span>·</span>
+  Export Grade <span>·</span>
+  Dahina, Rewari, Haryana
+</div>
+
+<!-- 02 NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="#">
+    <svg width="28" height="28" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs><clipPath id="lc"><circle cx="50" cy="50" r="47"/></clipPath></defs>
+      <circle cx="50" cy="50" r="47" fill="#5e86d1"/>
+      <polygon points="50,7 11,74 89,74" fill="white" clip-path="url(#lc)"/>
+      <polygon points="50,18 30,58 70,58" fill="#00bbb4" clip-path="url(#lc)"/>
+      <rect x="44" y="58" width="12" height="12" fill="white" clip-path="url(#lc)"/>
+      <rect x="14" y="70" width="72" height="22" fill="#00bbb4" clip-path="url(#lc)"/>
+    </svg>
+    Petrifern
+  </a>
+  <ul class="nav-links">
+    <li><a href="#catalog">Our Plants</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#facility">Facility</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">Enquire Now</a>
+</nav>
+
+<!-- 03 HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">India's Premier TC Lab</p>
+    <h1>Disease-free.<br><em>Export-ready.</em><br>At scale.</h1>
+    <p>Seven premium ornamental species, propagated under BSL-1 biosafety protocols in Haryana — genetically uniform, pathogen-free plantlets for growers worldwide.</p>
+    <div class="hero-btns">
+      <a class="btn-teal" href="#catalog">View Our Species</a>
+      <a class="btn-ghost" href="#contact">Partner With Us</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <!-- Confirmed: Phalaenopsis orchid spray, David Clode, Cairns Botanic Gardens -->
+    <img
+      src="https://images.unsplash.com/photo-1560241694-0fd033c2ef4c?auto=format&fit=crop&w=900&q=90"
+      alt="Phalaenopsis orchid in bloom"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </div>
+  <svg class="hero-triangle" viewBox="0 0 1200 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="1200,0 1200,70 0,70" fill="#ffffff"/>
+  </svg>
+</section>
+
+<!-- 04 SPECIES SELECTOR -->
+<section id="species">
+  <p class="species-title">Our Species Portfolio</p>
+  <div class="species-row">
+
+    <a class="species-item" href="#anthurium">
+      <!-- CONFIRMED: Annie Spratt, tagged anthurium, red spathe -->
+      <div class="species-circle">
+        <img src="https://images.unsplash.com/photo-1581916711996-95692fc9af7a?auto=format&fit=crop&w=220&h=220&q=85" alt="Anthurium"/>
+      </div>
+      <span class="species-name">Anthurium</span>
+      <span class="species-sci">A. andraeanum</span>
+    </a>
+
+    <a class="species-item" href="#dendrobium">
+      <!-- CONFIRMED: Zoshua Colah, "antelope-type Dendrobium orchids", Orchid House Kandy -->
+      <div class="species-circle">
+        <img src="https://images.unsplash.com/photo-1743635925111-07d10e46e2b6?auto=format&fit=crop&w=220&h=220&q=85" alt="Dendrobium"/>
+      </div>
+      <span class="species-name">Dendrobium</span>
+      <span class="species-sci">Dendrobium spp.</span>
+    </a>
+
+    <a class="species-item" href="#phalaenopsis">
+      <!-- CONFIRMED: David Clode, "Phalaenopsis orchid flowers, Cairns Botanic Gardens" -->
+      <div class="species-circle">
+        <img src="https://images.unsplash.com/photo-1560241694-0fd033c2ef4c?auto=format&fit=crop&w=220&h=220&q=85" alt="Phalaenopsis"/>
+      </div>
+      <span class="species-name">Phalaenopsis</span>
+      <span class="species-sci">P. amabilis</span>
+    </a>
+
+    <a class="species-item" href="#alocasia">
+      <!-- CONFIRMED: Anna Manson, "Variegated alocasia plant in a white pot" -->
+      <div class="species-circle">
+        <img src="https://images.unsplash.com/photo-1766139443607-ea1782ce245a?auto=format&fit=crop&w=220&h=220&q=85" alt="Alocasia"/>
+      </div>
+      <span class="species-name">Alocasia</span>
+      <span class="species-sci">Alocasia spp.</span>
+    </a>
+
+    <a class="species-item" href="#spathiphyllum">
+      <!-- CONFIRMED: Zdeněk Macháček, "peace lily flower" -->
+      <div class="species-circle">
+        <img src="https://images.unsplash.com/photo-1558254587-4b5ab7910c4b?auto=format&fit=crop&w=220&h=220&q=85" alt="Spathiphyllum"/>
+      </div>
+      <span class="species-name">Spathiphyllum</span>
+      <span class="species-sci">S. wallisii</span>
+    </a>
+
+    <a class="species-item" href="#syngonium">
+      <!-- CONFIRMED: charlesdeluvio, "green arrow-head leaf plant" (Syngonium) -->
+      <div class="species-circle">
+        <img src="https://images.unsplash.com/photo-1543805926-214b3603a158?auto=format&fit=crop&w=220&h=220&q=85" alt="Syngonium"/>
+      </div>
+      <span class="species-name">Syngonium</span>
+      <span class="species-sci">S. podophyllum</span>
+    </a>
+
+    <a class="species-item" href="#philodendron">
+      <!-- CONFIRMED: feey, "Philodendron scandens brazil in a white hanging pot" -->
+      <div class="species-circle">
+        <img src="https://images.unsplash.com/photo-1600411833196-7c1f6b1a8b90?auto=format&fit=crop&w=220&h=220&q=85" alt="Philodendron"/>
+      </div>
+      <span class="species-name">Philodendron</span>
+      <span class="species-sci">Philodendron spp.</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- 05 ABOUT -->
+<section id="about">
+  <div class="about-bg-tri"></div>
+  <div class="about-left sr">
+    <p class="about-label">About Petrifern</p>
+    <h2>India's first<br>export-grade TC lab.</h2>
+    <p>Petrifern is a BSL-1 certified ornamental plant tissue culture laboratory based in Dahina, Rewari, Haryana — the only facility of its kind at commercial scale in India.</p>
+    <p>We propagate seven high-value ornamental species under strict biosafety protocols, producing disease-free, genetically uniform plantlets for nurseries, exporters, and institutional growers across India and beyond.</p>
+    <p>Founded by an IIT Delhi biotechnology graduate and co-directed by a PhD-qualified plant biotechnologist specialising in orchid and aroid TC propagation.</p>
+    <div class="about-badges">
+      <span class="badge t">BSL-1 Certified</span>
+      <span class="badge">ICAR-NRCO Licensed</span>
+      <span class="badge">Export Grade</span>
+      <span class="badge">IIT Delhi · PhD Team</span>
+    </div>
+  </div>
+  <div class="about-stats sr d2">
+    <div class="astat">
+      <div class="astat-num">7</div>
+      <div class="astat-label">Premium<br>Species</div>
+    </div>
+    <div class="astat">
+      <div class="astat-num">BSL-1</div>
+      <div class="astat-label">Certified<br>Facility</div>
+    </div>
+    <div class="astat">
+      <div class="astat-num">2 Cr</div>
+      <div class="astat-label">Plants<br>Per Year</div>
+    </div>
+    <div class="astat">
+      <div class="astat-num">35</div>
+      <div class="astat-label">LAF<br>Workstations</div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 PLANT CATALOG -->
+<section id="catalog">
+  <p class="section-label sr">Species Portfolio</p>
+  <h2 class="sr d1">Seven species,<br>grown to perfection.</h2>
+  <p class="intro-p sr d2">Every plantlet propagated under BSL-1 biosafety protocols — disease-free, true-to-type, and ready for growers, exporters, and retail partners worldwide.</p>
+
+  <div class="cat-grid">
+
+    <!-- ANTHURIUM -->
+    <div class="cat-card sr d1" id="anthurium">
+      <div class="cat-img">
+        <img
+          src="https://images.unsplash.com/photo-1581916711996-95692fc9af7a?auto=format&fit=crop&w=720&h=500&q=85"
+          alt="Anthurium andraeanum — red spathe"
+          loading="lazy"
+        />
+      </div>
+      <div class="cat-body">
+        <p class="cat-type">Cut Flower · Pot Plant</p>
+        <h3 class="cat-name">Anthurium</h3>
+        <p class="cat-sci">Anthurium andraeanum</p>
+        <p class="cat-desc">Celebrated for its bold, waxy spathes in reds, corals, pinks, and whites, Anthurium is one of the world's most commercially traded ornamental species. Our TC plantlets deliver uniform colour, vigour, and disease-free quality across every batch.</p>
+      </div>
+    </div>
+
+    <!-- DENDROBIUM -->
+    <div class="cat-card sr d2" id="dendrobium">
+      <div class="cat-img">
+        <img
+          src="https://images.unsplash.com/photo-1743635925111-07d10e46e2b6?auto=format&fit=crop&w=720&h=500&q=85"
+          alt="Dendrobium orchid — flower spray"
+          loading="lazy"
+        />
+      </div>
+      <div class="cat-body">
+        <p class="cat-type">Cut Flower · Pot Plant</p>
+        <h3 class="cat-name">Dendrobium</h3>
+        <p class="cat-sci">Dendrobium spp.</p>
+        <p class="cat-desc">One of the largest and most commercially cultivated orchid genera — prized globally for spectacular, long-lasting flower sprays. TC production guarantees pathogen-free material with consistent bloom quality across all consignments.</p>
+      </div>
+    </div>
+
+    <!-- PHALAENOPSIS -->
+    <div class="cat-card sr d3" id="phalaenopsis">
+      <div class="cat-img">
+        <img
+          src="https://images.unsplash.com/photo-1560241694-0fd033c2ef4c?auto=format&fit=crop&w=720&h=500&q=85"
+          alt="Phalaenopsis — moth orchid in bloom"
+          loading="lazy"
+        />
+      </div>
+      <div class="cat-body">
+        <p class="cat-type">Pot Plant · Indoor</p>
+        <h3 class="cat-name">Phalaenopsis</h3>
+        <p class="cat-sci">Phalaenopsis amabilis</p>
+        <p class="cat-desc">The Moth Orchid — the world's best-selling flowering houseplant. Elegant arching flower spikes and blooms lasting 3–6 months. Tissue culture delivers the genetic uniformity that retail supply chains require at volume.</p>
+      </div>
+    </div>
+
+    <!-- ALOCASIA -->
+    <div class="cat-card sr d1" id="alocasia">
+      <div class="cat-img">
+        <img
+          src="https://images.unsplash.com/photo-1766139443607-ea1782ce245a?auto=format&fit=crop&w=720&h=500&q=85"
+          alt="Alocasia — variegated tropical foliage"
+          loading="lazy"
+        />
+      </div>
+      <div class="cat-body">
+        <p class="cat-type">Premium Indoor · Foliage</p>
+        <h3 class="cat-name">Alocasia</h3>
+        <p class="cat-sci">Alocasia spp.</p>
+        <p class="cat-desc">Architectural, sculptural, unmistakable. Alocasia's oversized, arrow-shaped leaves with striking venation make it one of the most in-demand foliage plants globally. TC is the only scalable route to consistent, disease-free commercial supply.</p>
+      </div>
+    </div>
+
+    <!-- SPATHIPHYLLUM -->
+    <div class="cat-card sr d2" id="spathiphyllum">
+      <div class="cat-img">
+        <img
+          src="https://images.unsplash.com/photo-1558254587-4b5ab7910c4b?auto=format&fit=crop&w=720&h=500&q=85"
+          alt="Spathiphyllum — peace lily in bloom"
+          loading="lazy"
+        />
+      </div>
+      <div class="cat-body">
+        <p class="cat-type">Indoor · Air Purifier</p>
+        <h3 class="cat-name">Spathiphyllum</h3>
+        <p class="cat-sci">Spathiphyllum wallisii</p>
+        <p class="cat-desc">The Peace Lily — one of the world's most beloved indoor plants. Elegant white spathes, low-light tolerance, and proven air-purifying properties. A year-round staple for retail, corporate gifting, and hospitality sectors.</p>
+      </div>
+    </div>
+
+    <!-- SYNGONIUM -->
+    <div class="cat-card sr d3" id="syngonium">
+      <div class="cat-img">
+        <img
+          src="https://images.unsplash.com/photo-1543805926-214b3603a158?auto=format&fit=crop&w=720&h=500&q=85"
+          alt="Syngonium — arrowhead plant leaves"
+          loading="lazy"
+        />
+      </div>
+      <div class="cat-body">
+        <p class="cat-type">Indoor · Trailing</p>
+        <h3 class="cat-name">Syngonium</h3>
+        <p class="cat-sci">Syngonium podophyllum</p>
+        <p class="cat-desc">The Arrowhead Plant — valued for its distinctive arrow-shaped leaves in greens, pinks, and variegated white. Fast-maturing, available in dozens of commercial varieties, and a reliable performer across mass-market and specialty retail.</p>
+      </div>
+    </div>
+
+    <!-- PHILODENDRON — wide card -->
+    <div class="cat-card cat-card-wide sr d1" id="philodendron">
+      <div class="cat-img">
+        <img
+          src="https://images.unsplash.com/photo-1600411833196-7c1f6b1a8b90?auto=format&fit=crop&w=1400&h=600&q=85"
+          alt="Philodendron — glossy trailing foliage"
+          loading="lazy"
+        />
+      </div>
+      <div class="cat-body">
+        <p class="cat-type">Premium Aroid · Indoor</p>
+        <h3 class="cat-name">Philodendron</h3>
+        <p class="cat-sci">Philodendron spp.</p>
+        <p class="cat-desc">One of the most genus-rich and commercially versatile aroids. From the heart-leaf Philodendron hederaceum to rare collector varieties, philodendrons combine striking foliage with easy care. Tissue culture delivers true-to-type, disease-free plants at the volume modern growers require.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 07 PROCESS -->
+<section id="process">
+  <div class="proc-photo">
+    <img
+      src="https://images.unsplash.com/photo-1576089388754-68c54a863b60?auto=format&fit=crop&w=900&q=85"
+      alt="Tissue culture laboratory — scientist working with specimens"
+      loading="lazy"
+    />
+  </div>
+  <div class="proc-content">
+    <p class="section-label sr">Our Protocol</p>
+    <h2 class="sr d1">From single cell<br>to field-ready plant.</h2>
+    <div class="step sr d1">
+      <span class="step-n">01</span>
+      <div class="step-b">
+        <h4>Explant Selection</h4>
+        <p>Mother cultures sourced from ICAR-licensed research centres or certified international breeders. Every explant is pathogen-verified before entering the BSL-1 production environment.</p>
+      </div>
+    </div>
+    <div class="step sr d2">
+      <span class="step-n">02</span>
+      <div class="step-b">
+        <h4>In-Vitro Multiplication</h4>
+        <p>Propagation under 35 LAF workstations using species-specific sterile media. Dual 70TR chiller units maintain optimal culture temperature around the clock.</p>
+      </div>
+    </div>
+    <div class="step sr d3">
+      <span class="step-n">03</span>
+      <div class="step-b">
+        <h4>Quality Control</h4>
+        <p>100% visual inspection at every sub-culture stage. Full batch traceability — species identity, mother source, passage number, and contamination rate — on every production lot.</p>
+      </div>
+    </div>
+    <div class="step sr d4">
+      <span class="step-n">04</span>
+      <div class="step-b">
+        <h4>Hardening &amp; Dispatch</h4>
+        <p>Structured acclimatisation in controlled hardening chambers. Domestic delivery to verified buyers; exports via phytosanitary-certified cold-chain packaging.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 FACILITY -->
+<section id="facility">
+  <div class="fac-bg-tri"></div>
+  <div class="fac-grid">
+    <div class="fac-photo sr d2">
+      <div class="carousel" id="facilityCarousel">
+        <div class="carousel-track">
+          <img src="facility-1.jpg" alt="Petrifern facility — front elevation, Dahina Haryana" loading="lazy"/>
+          <img src="facility-2.jpg" alt="Petrifern facility — isometric view" loading="lazy"/>
+          <img src="facility-3.jpg" alt="Petrifern facility — entrance perspective" loading="lazy"/>
+        </div>
+        <button class="car-btn car-prev" onclick="carMove(-1)" aria-label="Previous">&#8592;</button>
+        <button class="car-btn car-next" onclick="carMove(1)" aria-label="Next">&#8594;</button>
+        <div class="car-dots">
+          <span class="car-dot active" onclick="carGo(0)"></span>
+          <span class="car-dot" onclick="carGo(1)"></span>
+          <span class="car-dot" onclick="carGo(2)"></span>
+        </div>
+      </div>
+    </div>
+    <div class="fac-text sr">
+      <p class="section-label">Our Facility</p>
+      <h2>Infrastructure built<br>for the world.</h2>
+      <p>Our BSL-1 certified campus in Dahina, Rewari, Haryana is designed from the ground up for export-grade ornamental tissue culture — every specification chosen to meet international biosafety standards.</p>
+      <p>1,300 sqm of certified lab space, 35 Laminar Air Flow workstations, dual 70-Tonne Refrigeration chiller units, and a climate-controlled growth room holding 3.6 lakh jars. A compactor shelving system accommodates up to 15 lakh jars in parallel storage.</p>
+      <div class="certs">
+        <span class="cert">BSL-1 Certified</span>
+        <span class="cert">ICAR-NRCO Licensed</span>
+        <span class="cert">Export Compliant</span>
+      </div>
+      <div class="pills">
+        <span class="pill">1,300 sqm Lab</span>
+        <span class="pill">35 LAF Positions</span>
+        <span class="pill">Dual 70TR Chillers</span>
+        <span class="pill">3.6 Lakh Jar Growth Room</span>
+        <span class="pill">15 Lakh Jar Storage</span>
+        <span class="pill">320 KVA Power</span>
+        <span class="pill">Dahina, Rewari, HR</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 TEAM -->
+<section id="team">
+  <div class="section-label sr">Our Team</div>
+  <h2 class="sr d1">The people behind<br>Petrifern.</h2>
+  <p class="team-intro sr d2">A founding team that combines IIT-grade scientific training, PhD-level plant biotechnology expertise, and 25 years of commercial nursery trade — built for this from the ground up.</p>
+
+  <div class="team-grid">
+
+    <div class="team-card sr d1">
+      <div class="team-avatar-img">
+        <img src="rajat.jpg" alt="Rajat — Founder & CEO, Petrifern"/>
+      </div>
+      <div class="team-body">
+        <h3 class="team-name">Rajat</h3>
+        <p class="team-title">Founder &amp; CEO</p>
+        <div class="team-creds">
+          <span class="tcred">B.Tech Biotechnology</span>
+          <span class="tcred">IIT Delhi</span>
+          <span class="tcred">EXL Analytics</span>
+        </div>
+        <p class="team-bio">Rajat founded Petrifern combining an IIT Delhi biotechnology education with deep roots in commercial plant trade. Co-owner of Shri Ganga Ram Nursery — a 25-year-old established nursery business — he brings both the scientific rigour and the commercial buyer network that give Petrifern its unique competitive edge from day one.</p>
+      </div>
+    </div>
+
+    <div class="team-card sr d2">
+      <div class="team-avatar-img">
+        <img src="krishna.jpg" alt="Dr. Krishna Vyas Soni — Co-Director & CSO, Petrifern"/>
+      </div>
+      <div class="team-body">
+        <h3 class="team-name">Krishna Vyas Soni</h3>
+        <p class="team-title">Co-Director &amp; Chief Scientific Officer</p>
+        <div class="team-creds">
+          <span class="tcred">PhD Plant Biotechnology</span>
+          <span class="tcred">Orchid &amp; Aroid TC Specialist</span>
+        </div>
+        <p class="team-bio">Dr. Krishna Vyas Soni brings publication-grade scientific rigour to every production batch at Petrifern's BSL-1 facility. His PhD specialisation in orchid and aroid tissue culture propagation underpins the lab's protocols for all seven species — ensuring genetic fidelity, contamination control, and consistent quality at commercial scale.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 09 CTA -->
+<section id="cta">
+  <div class="cta-tri"></div>
+  <div class="cta-inner">
+    <p class="section-label sr">Work With Us</p>
+    <h2 class="sr d1">Ready to grow<br>with Petrifern?</h2>
+    <p class="sr d2">Whether you are a nursery buyer, floriculture exporter, institutional grower, or retail partner — we would love to discuss what we can build together.</p>
+    <a class="btn-white sr d3" href="#contact">Start the Conversation</a>
+  </div>
+</section>
+
+<!-- 10 CONTACT -->
+<div id="contact">
+  <div class="ci">
+    <div class="ci-tri"></div>
+    <div class="ci-inner">
+      <p class="section-label">Contact</p>
+      <h2>Let's build<br>something<br>that grows.</h2>
+      <p>We respond to all enquiries within 24 hours — buyers, partners, institutions, and press welcome.</p>
+      <div class="cdet">
+        <div class="cdet-l">Location</div>
+        <div class="cdet-v">Dahina, Rewari, Haryana, India</div>
+      </div>
+      <div class="cdet">
+        <div class="cdet-l">Legal Entity</div>
+        <div class="cdet-v">Framezy Biotech Pvt. Ltd.</div>
+      </div>
+      <div class="cdet">
+        <div class="cdet-l">Email</div>
+        <div class="cdet-v">contact@petrifern.com</div>
+      </div>
+      <div class="cdet">
+        <div class="cdet-l">Enquiries</div>
+        <div class="cdet-v">Buyers &nbsp;·&nbsp; Exporters &nbsp;·&nbsp; Partners &nbsp;·&nbsp; Press</div>
+      </div>
+    </div>
+  </div>
+  <div class="cfw">
+    <p class="section-label sr">Send Enquiry</p>
+    <h2 class="sr d1">Get in touch.</h2>
+    <form class="cform sr d2" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST" onsubmit="formOk(event)">
+      <input type="hidden" name="_subject" value="New Enquiry — Petrifern"/>
+      <input type="hidden" name="_replyto" value="contact@petrifern.com"/>
+      <div class="row2">
+        <div class="fg">
+          <label for="fn">Full Name</label>
+          <input id="fn" type="text" placeholder="Your name" required/>
+        </div>
+        <div class="fg">
+          <label for="fe">Email</label>
+          <input id="fe" type="email" placeholder="you@company.com" required/>
+        </div>
+      </div>
+      <div class="fg">
+        <label for="fc">Company / Nursery</label>
+        <input id="fc" type="text" placeholder="Organisation name"/>
+      </div>
+      <div class="fg">
+        <label for="ft">I am a</label>
+        <select id="ft">
+          <option value="">Select enquiry type</option>
+          <option>Nursery / Wholesale Buyer</option>
+          <option>Floriculture Exporter</option>
+          <option>Institutional / Research Partner</option>
+          <option>Retail / Garden Centre</option>
+          <option>International Buyer</option>
+          <option>Investor</option>
+          <option>Press / Media</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label for="fs">Species of Interest</label>
+        <input id="fs" type="text" placeholder="e.g. Anthurium, Phalaenopsis, Alocasia…"/>
+      </div>
+      <div class="fg">
+        <label for="fm">Message</label>
+        <textarea id="fm" placeholder="Tell us about your volumes, timelines, or any questions…"></textarea>
+      </div>
+      <button type="submit" class="submit">Send Enquiry →</button>
+      <p id="form-ok">✓ Message sent — we will respond within 24 hours.</p>
+    </form>
+  </div>
+</div>
+
+<!-- 11 FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">
+      <svg width="22" height="22" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs><clipPath id="fc"><circle cx="50" cy="50" r="47"/></clipPath></defs>
+        <circle cx="50" cy="50" r="47" fill="#5e86d1"/>
+        <polygon points="50,7 11,74 89,74" fill="white" clip-path="url(#fc)"/>
+        <polygon points="50,18 30,58 70,58" fill="#00bbb4" clip-path="url(#fc)"/>
+        <rect x="44" y="58" width="12" height="12" fill="white" clip-path="url(#fc)"/>
+        <rect x="14" y="70" width="72" height="22" fill="#00bbb4" clip-path="url(#fc)"/>
+      </svg>
+      Petrifern
+    </div>
+    <div class="footer-sub">by Framezy Biotech Pvt. Ltd.</div>
+  </div>
+  <div class="footer-r">
+    <span>© 2025 Petrifern · All rights reserved</span>
+    <span>Dahina, Rewari, Haryana, India</span>
+    <span>contact@petrifern.com</span>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const obs = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); }),
+    { threshold: 0.08 }
+  );
+  document.querySelectorAll('.sr').forEach(el => obs.observe(el));
+
+  // Carousel
+  let carIdx = 0;
+  const carTotal = 3;
+  function carUpdate() {
+    const track = document.querySelector('.carousel-track');
+    track.style.transform = `translateX(-${carIdx * 33.333}%)`;
+    document.querySelectorAll('.car-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === carIdx);
+    });
+  }
+  function carMove(dir) {
+    carIdx = (carIdx + dir + carTotal) % carTotal;
+    carUpdate();
+  }
+  function carGo(idx) {
+    carIdx = idx;
+    carUpdate();
+  }
+  // Auto-advance every 4 seconds
+  setInterval(() => carMove(1), 4000);
+
+
+  function formOk(e) {
+    if (e.target.action.includes('REPLACE_WITH')) {
+      e.preventDefault();
+      const ok = document.getElementById('form-ok');
+      ok.style.display = 'block';
+      e.target.reset();
+      setTimeout(() => { ok.style.display = 'none'; }, 7000);
+    }
+    // Once Formspree ID is added: native POST to Formspree, auto-redirects back
+  }
+</script>
+
+</body>
+</html>
